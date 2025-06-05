@@ -4,8 +4,6 @@
 
 BestClip is a Google Chrome extension (planned to later support Electron, macOS, and Windows) designed to sync and manage clipboard history in real-time across multiple devices. The project is currently under active development and not yet complete.
 
-## Project Vision
-
 ## What BestClip Will Do (When Complete)
 
 BestClip aims to sync text, images, and screenshots across devices using Google OAuth, store clipboard history securely in Firebase Firestore with timestamps and categories, and allow users to search, filter, and delete up to the last 100 entries with a clear and intuitive user interface. It will provide real-time clipboard monitoring through a Chrome Extension powered by manifest v3 and is planned to support cross-platform synchronization on macOS and Windows through future Electron builds.
