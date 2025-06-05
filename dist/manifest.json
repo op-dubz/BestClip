@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "BestClip",
+  "version": "1.0.0",
+  "description": "Cross-platform clipboard manager with real-time sync",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "identity", 
+    "clipboardRead", 
+    "scripting",
+    "clipboardWrite"
+  ],
+  "oauth2": {
+    "client_id": "948086267570-5oomtb5unq6sthvejes24p2r5fecj1oa.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js", 
+    "type": "module" 
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ], 
+  "optional_permissions": ["offscreen"],
+  "action": {
+    "default_popup": "bestclip_popup.html",
+    "default_title": "BestClip"
+  },
+  "commands": {
+  "open-bestclip": {
+    "suggested_key": {
+      "default": "Ctrl+Shift+V",
+      "mac": "Command+Shift+V"
+    },
+    "description": "Open BestClip"
+  }
+},
+  "web_accessible_resources": [
+    {
+      "resources": ["bestclip_popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+  "extension_pages": "script-src 'self'; object-src 'self';"
+}
+}
